@@ -1,0 +1,11 @@
+li a {
+    color: white;
+}
+body {
+    background: black url("background.webp") no-repeat;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: white;
+}
