@@ -1,0 +1,10 @@
+# In your template:
+{{ form }}
+
+# In form_snippet.html:
+{% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+    </div>
+{% endfor %}

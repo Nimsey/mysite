@@ -19,6 +19,14 @@ load_dotenv()
 import dj_database_url
 import psycopg2
 
+from django.forms.renderers import TemplatesSetting
+
+class CustomFormRenderer(TemplatesSetting):
+    form_template_name = "form_snippet.html"
+
+
+# FORM_RENDERER = "project.settings.CustomFormRenderer"
+
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require', port=5432)
@@ -130,3 +138,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL = os.getenv('EMAIL')
+EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = EMAIL  
+EMAIL_HOST_PASSWORD = EMAIL_PASSWORD
+EMAIL_USE_TLS = True
