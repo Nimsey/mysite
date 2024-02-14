@@ -70,7 +70,7 @@
             <li class="breadcrumb-item active" aria-current="page"><a href="/polls">View All Questions</a></li>
             <li class="breadcrumb-item active" aria-current="page"><a href="/questions/create">Create Question</a></li>
             {% if user.is_authenticated %}
-            <li class="breadcrumb-item active" aria-current="page"><a href="/user/{{user}}">{{user}}'s Profile</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="/User/{{user}}">{{user}}'s Profile</a></li>
             <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'logout' %}">Logout</a></li>
             {% else %}
             <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'login' %}">Login</a></li>

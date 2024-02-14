@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from home import views as core_views
 from django.contrib.auth import views as auth_views
-from home.views import logout_view, signup_view, login_view
+from home.views import logout_view, signup_view, login_view, profile
+from home import views
 
 class LogoutView(auth_views.LogoutView):
     def get(self, request, *args, **kwargs):
@@ -30,5 +31,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('logout/', logout_view, name='logout'),
     path('login/', login_view, name='login'),
-    path('signup/', signup_view, name='signup'),  # Add this line
+    path('signup/', signup_view, name='signup'),
+    path('User/<username>/', profile, name="profile" ),# Add this line
+    path('accounts/login/', views.login_view, name='accountlogin'),
 ]
